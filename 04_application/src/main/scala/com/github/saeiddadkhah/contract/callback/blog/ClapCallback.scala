@@ -18,8 +18,8 @@ abstract class ClapCallback {
    **/
   def getBy(postID: Long, limit: Int, offset: Int): Future[Vector[Clap]]
 
-  def remove(id: Long): Future[Unit]
+  def remove(userID: Long, postID: Long): Future[Unit]
 
-  def update(user: Clap): Future[Unit]
+  def update(clap: Clap): Future[Unit]
 
 }

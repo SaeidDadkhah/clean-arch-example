@@ -22,6 +22,6 @@ abstract class CommentCallback {
 
   def remove(id: Long): Future[Unit]
 
-  def update(user: Comment): Future[Unit]
+  def update(comment: Comment): Future[Unit]
 
 }

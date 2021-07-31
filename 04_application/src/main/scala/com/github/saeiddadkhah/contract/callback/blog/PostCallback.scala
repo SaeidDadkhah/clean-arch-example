@@ -33,6 +33,6 @@ abstract class PostCallback {
 
   def remove(id: Long): Future[Unit]
 
-  def update(user: Post): Future[Unit]
+  def update(post: Post): Future[Unit]
 
 }
