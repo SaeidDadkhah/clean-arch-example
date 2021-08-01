@@ -36,3 +36,6 @@ class ClapRepository extends ClapCallback with SimpleInMemoryModule[Clap] {
   }
 
 }
+
+// Singleton Repository
+object ClapRepository extends ClapRepository

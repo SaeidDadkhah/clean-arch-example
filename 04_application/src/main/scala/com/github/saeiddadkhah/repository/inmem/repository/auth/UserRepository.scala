@@ -32,6 +32,13 @@ class UserRepository extends UserCallback with SimpleInMemoryModule[User] {
     data.find(_.id == id)
   }
 
+  /**
+   * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
+   * */
+  override def getBy(username: String): Future[Option[User]] = Future {
+    data.find(_.username == username)
+  }
+
   override def remove(id: Long): Future[Unit] = {
     removeFromMemory(_.id == id)
   }
@@ -41,3 +48,6 @@ class UserRepository extends UserCallback with SimpleInMemoryModule[User] {
   }
 
 }
+
+// Singleton Repository
+object UserRepository extends UserRepository

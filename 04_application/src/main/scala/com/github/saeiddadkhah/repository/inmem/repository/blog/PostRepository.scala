@@ -49,3 +49,6 @@ class PostRepository extends PostCallback with SimpleInMemoryModule[Post] {
   }
 
 }
+
+// Singleton Repository
+object PostRepository extends PostRepository

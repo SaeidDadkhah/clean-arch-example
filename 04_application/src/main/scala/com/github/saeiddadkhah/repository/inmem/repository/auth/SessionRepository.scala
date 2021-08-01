@@ -18,3 +18,6 @@ class SessionRepository extends SessionCallback with SimpleInMemoryModule[Sessio
   }
 
 }
+
+// Singleton Repository
+object SessionRepository extends SessionRepository

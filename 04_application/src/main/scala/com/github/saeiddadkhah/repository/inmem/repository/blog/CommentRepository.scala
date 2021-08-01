@@ -38,3 +38,6 @@ class CommentRepository extends CommentCallback with SimpleInMemoryModule[Commen
   }
 
 }
+
+// Singleton Repository
+object CommentRepository extends CommentRepository

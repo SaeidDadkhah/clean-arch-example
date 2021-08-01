@@ -1,6 +1,6 @@
 name := "clean-arch-example"
 organization := "com.github.saeiddadkhah"
-version := "0.0.1"
+version := "0.0.2"
 
 scalaVersion := "2.12.14"
 
