@@ -12,6 +12,8 @@ import scala.concurrent.Future
 
 class PostRepository extends PostCallback with SimpleInMemoryModule[Post] {
 
+  override val name: String = "Post"
+
   override def add(
                     authorID: Long,
                     title: String,

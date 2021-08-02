@@ -9,6 +9,8 @@ import scala.concurrent.Future
 
 trait SimpleInMemoryModule[T] {
 
+  val name: String
+
   implicit val ec: ExecutionContext = SimpleInMemoryModule.ec
 
   var data: Vector[T] = Vector.empty
@@ -40,7 +42,7 @@ trait SimpleInMemoryModule[T] {
   def removeFromMemory(predicate: T => Boolean): Future[Unit] = {
     val index = data indexWhere predicate
     if (index == -1) {
-      Future failed new Exception("User Not Found!")
+      Future failed new Exception(s"$name Not Found!")
     } else {
       Future {
         data synchronized {
@@ -53,7 +55,7 @@ trait SimpleInMemoryModule[T] {
   def updateInMemory(t: T, predicate: T => Boolean): Future[Unit] = {
     val index = data indexWhere predicate
     if (index == -1) {
-      Future failed new Exception("User Not Found!")
+      Future failed new Exception(s"$name Not Found!")
     } else {
       Future {
         data synchronized {

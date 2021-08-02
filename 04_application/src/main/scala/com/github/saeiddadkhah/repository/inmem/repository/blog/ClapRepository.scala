@@ -8,6 +8,8 @@ import scala.concurrent.Future
 
 class ClapRepository extends ClapCallback with SimpleInMemoryModule[Clap] {
 
+  override val name: String = "Clap"
+
   override def add(userID: Long, postID: Long, count: Long): Future[Clap] = {
     val clap = Clap(userID, postID, count)
     addToMemory(clap).map(_ => clap)

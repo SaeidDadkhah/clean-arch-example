@@ -20,11 +20,11 @@ class SignInUseCase(sessionCallback: SessionCallback, userCallback: UserCallback
       case None => Future failed new Exception(s"Username or password is not correct!")
     } // Hereafter, we will use user.username instead of request.username.
     hashedPassword = AuthUtils hashPassword request.password
-    session <- if(hashedPassword == user.password) {
-      val key  = AuthUtils sessionKey user
+    session <- if (hashedPassword == user.password) {
+      val key = AuthUtils.sessionKey(user.id, user.username)
       sessionCallback.add(key, user.id, user.username)
     } else {
-      Future failed new Exception(s"Username or password is not correct!")
+      Future failed new Exception(s"Username or password is not correct!") // Show the same error to hide the auth procedure and existence of username
     }
   } yield session
 

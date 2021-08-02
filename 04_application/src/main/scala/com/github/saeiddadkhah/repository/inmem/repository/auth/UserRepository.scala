@@ -10,6 +10,8 @@ import scala.concurrent.Future
 
 class UserRepository extends UserCallback with SimpleInMemoryModule[User] {
 
+  override val name: String = "User"
+
   override def add(
                     username: String,
                     password: String,

@@ -10,6 +10,8 @@ import scala.concurrent.Future
 
 class CommentRepository extends CommentCallback with SimpleInMemoryModule[Comment] {
 
+  override val name: String = "Comment"
+
   override def add(userID: Long, postID: Long, text: String, createdAt: ZonedDateTime): Future[Comment] = {
     val comment = Comment(generateID(), userID, postID, text, createdAt)
     addToMemory(comment).map(_ => comment)
