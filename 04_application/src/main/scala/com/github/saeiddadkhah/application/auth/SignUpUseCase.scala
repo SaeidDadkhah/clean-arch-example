@@ -5,7 +5,6 @@ import java.time.ZonedDateTime
 import com.github.saeiddadkhah.contract.callback.auth.UserCallback
 import com.github.saeiddadkhah.contract.service.auth.SignUpService
 import com.github.saeiddadkhah.domain.auth.User
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.userCallback
 import com.github.saeiddadkhah.util.AuthUtils.AuthUtils
 
 import scala.concurrent.ExecutionContext
@@ -31,6 +30,3 @@ class SignUpUseCase(userCallback: UserCallback) extends SignUpService {
   }
 
 }
-
-// Singleton Use Case
-object SignUpUseCase extends SignUpUseCase(userCallback)

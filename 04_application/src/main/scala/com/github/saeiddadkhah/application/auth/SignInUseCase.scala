@@ -4,8 +4,6 @@ import com.github.saeiddadkhah.contract.callback.auth.SessionCallback
 import com.github.saeiddadkhah.contract.callback.auth.UserCallback
 import com.github.saeiddadkhah.contract.service.auth.SignInService
 import com.github.saeiddadkhah.domain.auth.Session
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.sessionCallback
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.userCallback
 import com.github.saeiddadkhah.util.AuthUtils.AuthUtils
 
 import scala.concurrent.ExecutionContext
@@ -29,6 +27,3 @@ class SignInUseCase(sessionCallback: SessionCallback, userCallback: UserCallback
   } yield session
 
 }
-
-// Singleton Use Case
-object SignInUseCase extends SignInUseCase(sessionCallback, userCallback)

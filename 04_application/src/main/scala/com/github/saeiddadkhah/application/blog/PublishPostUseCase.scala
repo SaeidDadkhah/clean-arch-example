@@ -6,8 +6,6 @@ import com.github.saeiddadkhah.contract.callback.auth.UserCallback
 import com.github.saeiddadkhah.contract.callback.blog.PostCallback
 import com.github.saeiddadkhah.contract.service.blog.PublishPostService
 import com.github.saeiddadkhah.domain.blog.Post
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.userCallback
-import com.github.saeiddadkhah.modules.CallbackModule.Blog.postCallback
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
@@ -27,6 +25,3 @@ class PublishPostUseCase(postCallback: PostCallback, userCallback: UserCallback)
   } yield post
 
 }
-
-// Singleton Use Case
-object PublishPostUseCase extends PublishPostUseCase(postCallback, userCallback)
