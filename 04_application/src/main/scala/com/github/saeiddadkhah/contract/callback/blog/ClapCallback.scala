@@ -10,12 +10,12 @@ abstract class ClapCallback {
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   **/
+   */
   def getBy(userID: Long, postID: Long): Future[Option[Clap]]
 
   /**
    * Add limit and offset parameters when you expect multiple objects.
-   **/
+   */
   def getBy(postID: Long, limit: Int, offset: Int): Future[Vector[Clap]]
 
   def remove(userID: Long, postID: Long): Future[Unit]

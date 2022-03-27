@@ -10,8 +10,8 @@ object CallbackModule {
     import callback.auth._
     import inmem.auth._
 
-    val sessionCallback: SessionCallback = SessionRepository
-    val userCallback: UserCallback = UserRepository
+    val sessionCallback: SessionCallback = new SessionRepository()
+    val userCallback: UserCallback = new UserRepository()
 
   }
 
@@ -20,9 +20,9 @@ object CallbackModule {
     import callback.blog._
     import inmem.blog._
 
-    val clapCallback: ClapCallback = ClapRepository
-    val commentCallback: CommentCallback = CommentRepository
-    val postCallback: PostCallback = PostRepository
+    val clapCallback: ClapCallback = new ClapRepository()
+    val commentCallback: CommentCallback = new CommentRepository()
+    val postCallback: PostCallback = new PostRepository()
 
   }
 

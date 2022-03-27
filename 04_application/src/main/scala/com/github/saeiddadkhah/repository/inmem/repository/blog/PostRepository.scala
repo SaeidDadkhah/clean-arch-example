@@ -30,14 +30,14 @@ class PostRepository extends PostCallback with SimpleInMemoryModule[Post] {
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   * */
+   */
   override def get(id: Long): Future[Option[Post]] = Future {
     data.find(_.id == id)
   }
 
   /**
    * Add limit and offset parameters when you expect multiple objects.
-   * */
+   */
   override def getBy(userID: Long, limit: Int, offset: Int): Future[Vector[Post]] = Future {
     pagination(data.filter(_.authorID == userID), limit, offset)
   }
@@ -51,6 +51,3 @@ class PostRepository extends PostCallback with SimpleInMemoryModule[Post] {
   }
 
 }
-
-// Singleton Repository
-object PostRepository extends PostRepository

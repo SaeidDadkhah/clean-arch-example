@@ -19,14 +19,14 @@ class CommentRepository extends CommentCallback with SimpleInMemoryModule[Commen
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   * */
+   */
   override def get(id: Long): Future[Option[Comment]] = Future {
     data.find(_.id == id)
   }
 
   /**
    * Add limit and offset parameters when you expect multiple objects.
-   * */
+   */
   override def getBy(postID: Long, limit: Int, offset: Int): Future[Vector[Comment]] = Future {
     pagination(data.filter(_.postID == postID), limit, offset)
   }
@@ -40,6 +40,3 @@ class CommentRepository extends CommentCallback with SimpleInMemoryModule[Commen
   }
 
 }
-
-// Singleton Repository
-object CommentRepository extends CommentRepository

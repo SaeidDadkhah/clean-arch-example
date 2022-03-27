@@ -36,7 +36,7 @@ Implementation of repositories, use cases, and modules.
 * Use cases should use instances of callbacks **_(NOT repositories)_**.
 * All configurations should be placed in `modules` package.
 * There are three essential modules
-    1. Loading config and validating it happens in `modules.ConfigModule`.
+    1. Loading the config and validating it happens in `modules.ConfigModule`.
     1. Callbacks should be bound to repositories in `modules.CallbackModule`.
     1. Services should be bound to use cases in `modules.ServiceModule`.
 * Each type of external data source and entry should have exactly one module.

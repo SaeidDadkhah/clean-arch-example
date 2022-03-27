@@ -22,12 +22,12 @@ abstract class UserCallback {
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   * */
+   */
   def get(id: Long): Future[Option[User]]
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   * */
+   */
   def getBy(username: String): Future[Option[User]]
 
   def remove(id: Long): Future[Unit]

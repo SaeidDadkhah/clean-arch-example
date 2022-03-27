@@ -17,14 +17,14 @@ class ClapRepository extends ClapCallback with SimpleInMemoryModule[Clap] {
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   * */
+   */
   override def getBy(userID: Long, postID: Long): Future[Option[Clap]] = Future {
     data.find(clap => clap.userID == userID && clap.postID == postID)
   }
 
   /**
    * Add limit and offset parameters when you expect multiple objects.
-   * */
+   */
   override def getBy(postID: Long, limit: Int, offset: Int): Future[Vector[Clap]] = Future {
     pagination(data.filter(_.postID == postID), limit, offset)
   }
@@ -38,6 +38,3 @@ class ClapRepository extends ClapCallback with SimpleInMemoryModule[Clap] {
   }
 
 }
-
-// Singleton Repository
-object ClapRepository extends ClapRepository

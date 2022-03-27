@@ -17,7 +17,7 @@ class SessionRepository extends SessionCallback with SimpleInMemoryModule[Sessio
 
   /**
    * Use [[scala.Option]] class to show explicitly that you don't expect a result for any parameter.
-   * */
+   */
   override def get(key: String): Future[Option[Session]] = Future {
     data.find(_.key == key)
   }
@@ -27,6 +27,3 @@ class SessionRepository extends SessionCallback with SimpleInMemoryModule[Sessio
   }
 
 }
-
-// Singleton Repository
-object SessionRepository extends SessionRepository

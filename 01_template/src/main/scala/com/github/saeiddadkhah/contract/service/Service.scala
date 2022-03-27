@@ -11,7 +11,7 @@ abstract class Service[Request, Response] {
    *
    * @see [[Future]]
    * @see [[scala.util.Try]]
-   * */
+   */
   def call(request: Request)(implicit ec: ExecutionContext): Future[Response]
 
 }
