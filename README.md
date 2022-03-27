@@ -1,6 +1,9 @@
 # Clean Arch Example
 
 An implementation of Clean Architecture in Scala. We will implement a simple blog application using Clean Architecture in Scala.
+The bellow image is a schematic of our clean architecture style.
+
+![Clean Architecture](./public/images/our_clean_architecture.png)
 
 ## Subprojects:
 
