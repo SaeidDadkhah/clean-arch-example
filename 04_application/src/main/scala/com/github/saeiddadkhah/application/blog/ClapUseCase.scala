@@ -5,9 +5,6 @@ import com.github.saeiddadkhah.contract.callback.blog.ClapCallback
 import com.github.saeiddadkhah.contract.callback.blog.PostCallback
 import com.github.saeiddadkhah.contract.service.blog.ClapService
 import com.github.saeiddadkhah.domain.blog.Clap
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.userCallback
-import com.github.saeiddadkhah.modules.CallbackModule.Blog.clapCallback
-import com.github.saeiddadkhah.modules.CallbackModule.Blog.postCallback
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
@@ -43,5 +40,3 @@ class ClapUseCase(clapCallback: ClapCallback, postCallback: PostCallback, userCa
   } yield newClap
 
 }
-
-object ClapUseCase extends ClapUseCase(clapCallback, postCallback, userCallback)

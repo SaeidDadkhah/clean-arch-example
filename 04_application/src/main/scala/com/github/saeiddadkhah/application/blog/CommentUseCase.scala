@@ -7,9 +7,6 @@ import com.github.saeiddadkhah.contract.callback.blog.CommentCallback
 import com.github.saeiddadkhah.contract.callback.blog.PostCallback
 import com.github.saeiddadkhah.contract.service.blog.CommentService
 import com.github.saeiddadkhah.domain.blog.Comment
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.userCallback
-import com.github.saeiddadkhah.modules.CallbackModule.Blog.commentCallback
-import com.github.saeiddadkhah.modules.CallbackModule.Blog.postCallback
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
@@ -32,5 +29,3 @@ class CommentUseCase(commentCallback: CommentCallback, postCallback: PostCallbac
   } yield comment
 
 }
-
-object CommentUseCase extends CommentUseCase(commentCallback, postCallback, userCallback)

@@ -1,2 +1,10 @@
+# Config
+application.conf
+application.staging*.conf
+application.prodcution*.conf
+
+# IDE
 .idea
+
+# Scala
 target

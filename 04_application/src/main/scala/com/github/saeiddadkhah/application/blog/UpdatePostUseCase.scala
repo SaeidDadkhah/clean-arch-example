@@ -3,7 +3,6 @@ package com.github.saeiddadkhah.application.blog
 import com.github.saeiddadkhah.contract.callback.blog.PostCallback
 import com.github.saeiddadkhah.contract.service.blog.UpdatePostService
 import com.github.saeiddadkhah.domain.blog.Post
-import com.github.saeiddadkhah.modules.CallbackModule.Blog.postCallback
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
@@ -21,5 +20,3 @@ class UpdatePostUseCase(postCallback: PostCallback) extends UpdatePostService {
   } yield post
 
 }
-
-object UpdatePostUseCase extends UpdatePostUseCase(postCallback)

@@ -2,7 +2,6 @@ package com.github.saeiddadkhah.application.auth
 
 import com.github.saeiddadkhah.contract.callback.auth.SessionCallback
 import com.github.saeiddadkhah.contract.service.auth.SignOutService
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.sessionCallback
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
@@ -14,5 +13,3 @@ class SignOutUseCase(sessionCallback: SessionCallback) extends SignOutService {
   }
 
 }
-
-object SignOutUseCase extends SignOutUseCase(sessionCallback)

@@ -2,7 +2,7 @@ package com.github.saeiddadkhah.application.auth
 
 import com.github.saeiddadkhah.contract.callback.auth.SessionCallback
 import com.github.saeiddadkhah.contract.service.auth.AuthorizeService
-import com.github.saeiddadkhah.modules.CallbackModule.Auth.sessionCallback
+import com.github.saeiddadkhah.modules.ConfigModule
 import com.github.saeiddadkhah.util.AuthUtils.AuthUtils
 
 import scala.concurrent.ExecutionContext
@@ -10,9 +10,11 @@ import scala.concurrent.Future
 
 class AuthorizeUseCase(sessionCallback: SessionCallback) extends AuthorizeService {
 
+  import AuthorizeUseCase._
+
   override def call(request: AuthorizeService.Request)(implicit ec: ExecutionContext): Future[Unit] = for {
     // Checking invalid key
-    _ <- if (AuthUtils.sessionKey(request.session.userID, request.session.username) != request.session.key) {
+    _ <- if (AuthUtils.sessionKey(request.session.userID, request.session.username, secret) != request.session.key) {
       Future failed new Exception("User has not logged in!")
     } else {
       Future.unit
@@ -28,4 +30,8 @@ class AuthorizeUseCase(sessionCallback: SessionCallback) extends AuthorizeServic
 
 }
 
-object AuthorizeUseCase extends AuthorizeUseCase(sessionCallback)
+object AuthorizeUseCase extends ConfigModule {
+
+  private lazy val secret = config getString "application.authentication.secret"
+
+}

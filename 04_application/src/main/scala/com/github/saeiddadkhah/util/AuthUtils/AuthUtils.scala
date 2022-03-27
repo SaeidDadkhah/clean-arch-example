@@ -8,9 +8,9 @@ object AuthUtils {
   }
 
   //noinspection ScalaUnusedSymbol
-  def sessionKey(userID: Long, username: String): String = {
+  def sessionKey(userID: Long, username: String, secret: String): String = {
     // Do some other stuff like encrypting using a private key or signing the session
-    s"key_for_$username"
+    s"key_for_${username}_with_$secret"
   }
 
 }
