@@ -18,6 +18,8 @@ I will walk through the following projects to show the process of creating a Sca
 
 Directories and abstraction of `contract.service.Service`.
 
+For more information about this section visit my [blog](https://medium.com/codex/clean-architecture-in-scala-41d1ab05a618).
+
 ### 2. Domain
 
 Design of classes and implementation of simple class-related use cases.
@@ -62,3 +64,6 @@ We are using `config` library of `com.typesafe` to load configs.
     You may set an environment variable to specify the config file and load it using this function.
     * A more elegant method is to use `-DConfig.file` JVM option and use this function
     `ConfigFactory.load().withFallback(ConfigFactory.defaultApplication()).resolve`.
+
+# Read More
+For more information about this repository, visit my [blog](https://saeiddadkhah.medium.com/).
