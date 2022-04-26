@@ -16,7 +16,7 @@ case class Post(
 
   import Post._
 
-  require(paragraphs.isEmpty, "No Paragraphs!")
+  require(paragraphs.nonEmpty, "No Paragraphs!")
   require(tags.size <= TAG_MAX, s"Tags more than $TAG_MAX: ${tags.size}")
   require(claps >= 0, s"Claps less than zero: $claps")
 
