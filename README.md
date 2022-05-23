@@ -18,11 +18,14 @@ I will walk through the following projects to show the process of creating a Sca
 
 Directories and abstraction of `contract.service.Service`.
 
-For more information about this section visit my [blog](https://medium.com/codex/clean-architecture-in-scala-41d1ab05a618).
+For more information about this section visit my [blog](https://saeiddadkhah.medium.com/clean-architecture-in-scala-41d1ab05a618).
 
 ### 2. Domain
 
 Design of classes and implementation of simple class-related use cases.
+
+For more information about this section visit my
+[blog](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03).
 
 ### 3. Contract
 
@@ -31,6 +34,9 @@ Signature of services and callbacks.
 * Services should extend `c.s.Service` and have only one public method which is `c.s.Service.call`.
 * Callbacks should contain only the abstraction of CRUD operations without any logic.
 * Callbacks do not take execution context as a parameter and should take one from their parent module _(R.T. #4 Application)_.
+
+For more information about this section visit my
+[blog](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03).
 
 ### 4. Application
 
