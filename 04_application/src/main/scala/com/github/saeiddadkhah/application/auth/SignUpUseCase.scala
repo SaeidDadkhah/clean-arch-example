@@ -5,7 +5,7 @@ import java.time.ZonedDateTime
 import com.github.saeiddadkhah.contract.callback.auth.UserCallback
 import com.github.saeiddadkhah.contract.service.auth.SignUpService
 import com.github.saeiddadkhah.domain.auth.User
-import com.github.saeiddadkhah.util.AuthUtils.AuthUtils
+import com.github.saeiddadkhah.util.AuthUtils
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future

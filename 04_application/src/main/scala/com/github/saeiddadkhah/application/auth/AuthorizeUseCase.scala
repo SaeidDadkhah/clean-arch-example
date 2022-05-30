@@ -3,7 +3,7 @@ package com.github.saeiddadkhah.application.auth
 import com.github.saeiddadkhah.contract.callback.auth.SessionCallback
 import com.github.saeiddadkhah.contract.service.auth.AuthorizeService
 import com.github.saeiddadkhah.modules.ConfigModule
-import com.github.saeiddadkhah.util.AuthUtils.AuthUtils
+import com.github.saeiddadkhah.util.AuthUtils
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future

@@ -1,4 +1,4 @@
-package com.github.saeiddadkhah.util.AuthUtils
+package com.github.saeiddadkhah.util
 
 object AuthUtils {
 

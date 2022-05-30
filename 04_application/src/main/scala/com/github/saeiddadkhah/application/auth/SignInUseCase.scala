@@ -5,7 +5,7 @@ import com.github.saeiddadkhah.contract.callback.auth.UserCallback
 import com.github.saeiddadkhah.contract.service.auth.SignInService
 import com.github.saeiddadkhah.domain.auth.Session
 import com.github.saeiddadkhah.modules.ConfigModule
-import com.github.saeiddadkhah.util.AuthUtils.AuthUtils
+import com.github.saeiddadkhah.util.AuthUtils
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
