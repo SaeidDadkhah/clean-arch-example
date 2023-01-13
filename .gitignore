@@ -7,4 +7,5 @@ application.prodcution*.conf
 .idea
 
 # Scala
+.bsp
 target

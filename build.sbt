@@ -1,15 +1,15 @@
 name := "clean-arch-example"
 organization := "com.github.saeiddadkhah"
-version := "0.0.3"
+version := "0.0.4"
 
-scalaVersion := "2.12.14"
+scalaVersion := "2.12.17"
 
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-encoding", "utf8")
 
 // Dependencies
 lazy val applicationDependencies = Seq(
   // Config
-  "com.typesafe" % "config" % "1.4.0",
+  "com.typesafe" % "config" % "1.4.2",
 )
 
 // Projects
