@@ -11,6 +11,10 @@ lazy val applicationDependencies = Seq(
   // Config
   "com.typesafe" % "config" % "1.4.2",
 )
+lazy val dependencyInjectionDependencies = applicationDependencies ++ Seq(
+  // Dependency Injection
+  "com.google.inject" % "guice" % "5.1.0",
+)
 lazy val restServerFinatraDependencies = applicationDependencies ++ Seq(
   // REST Server
   "com.jakehschwartz" %% "finatra-swagger" % "20.4.1",
@@ -35,11 +39,16 @@ lazy val application = project.settings(
 // // Test
 // Reserved: lazy val testProject = project.settings(name := "11_test") in file("./11_test")
 
+// // Dependency Injection
+lazy val dependencyInjection = project.settings(
+  name := "21_dependency_injection", libraryDependencies ++= dependencyInjectionDependencies
+) in file("./21_dependency_injection")
+
 // // REST Server
 // Reserved: lazy val restServerPlay = project.settings(name := "21_play") in file("./21_play")
 lazy val restServerFinatra = project.settings(
-  name := "22_finatra", libraryDependencies ++= restServerFinatraDependencies
-) in file("./22_finatra")
+  name := "32_finatra", libraryDependencies ++= restServerFinatraDependencies
+) in file("./32_finatra")
 // Reserved: lazy val restServerAkka = project.settings(name := "23_akka") in file("./23_akka")
 
 // // Database
