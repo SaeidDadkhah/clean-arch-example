@@ -50,12 +50,13 @@ lazy val dependencyInjection = project.settings(
 ) in file("./21_dependency_injection")
 
 // // REST Server
-// Reserved: lazy val restServerPlay = project.settings(name := "21_play") in file("./21_play")
+// Reserved: lazy val restServerPlay = project.settings(name := "31_play") in file("./31_play")
 /** @see [[dependencyInjection]] before reading this project. */
 lazy val restServerFinatra = project.settings(
   name := "32_finatra", libraryDependencies ++= restServerFinatraDependencies
 ) in file("./32_finatra")
-// Reserved: lazy val restServerAkka = project.settings(name := "23_akka") in file("./23_akka")
+// Reserved: lazy val restServerAkka = project.settings(name := "33_akka") in file("./33_akka")
 
 // // Database
-// Reserved: lazy val databaseSlick = project.settings(name := "31_slick") in file("./31_slick")
+// Reserved: lazy val databaseSlick = project.settings(name := "41_slick") in file("./41_slick")
+// Reserved: lazy val databaseSlick = project.settings(name := "42_scalikejdbc") in file("./42_scalikejdbc")

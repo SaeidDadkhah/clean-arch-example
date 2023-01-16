@@ -71,5 +71,33 @@ We are using `config` library of `com.typesafe` to load configs.
     * A more elegant method is to use `-DConfig.file` JVM option and use this function
     `ConfigFactory.load().withFallback(ConfigFactory.defaultApplication()).resolve`.
 
+### 11. Test
+
+RESERVED
+
+### 21. Dependency Injection
+
+Initialized.
+
+### 31. Rest Server with Play
+
+RESERVED
+
+### 32. Rest Server with Finatra
+
+Initialized.
+
+### 33. Rest Server with Akka
+
+RESERVED
+
+### 41. Connect to Databases using Slick
+
+RESERVED
+
+### 42. Connect to Databases using ScalikeJDBC
+
+RESERVED
+
 # Read More
 For more information about this repository, visit my [blog](https://saeiddadkhah.medium.com/).
