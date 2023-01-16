@@ -7,34 +7,41 @@ The bellow image is a schematic of our clean architecture style.
 
 ## Subprojects:
 
-I will walk through the following projects to show the process of creating a Scala Application using Clean Architecture:
+I will walk through the following projects to show the process of creating a Scala Application using Clean Architecture and some frameworks:
 
-1. [Template](#1-template)
-2. [Domain](#2-domain)
-3. [Contract](#3-contract)
-4. [Application](#4-application)
-11. [Test](#11-test)
-21. [Dependency Injection](#21-dependency-injection)
-31. [Rest Server with Play](#31-rest-server-with-play)
-32. [Rest Server with Finatra](#32-rest-server-with-finatra)
-33. [Rest Server with Akka](#33-rest-server-with-akka)
-41. [Connect to Databases using Slick](#41-connect-to-databases-using-slick)
-42. [Connect to Databases using ScalikeJDBC](#42-connect-to-databases-using-scalikejdbc)
+0. [Clean Architecture](#0-clean-architecture)
+   1. [Template](#1-template)
+   2. [Domain](#2-domain)
+   3. [Contract](#3-contract)
+   4. [Application](#4-application)
+1. [Test](#1-test)
+   1. [Test](#1-test-with-scalatest)
+2. [Dependency Injection](#2-dependency-injection)
+   1. [Dependency Injection](#1-dependency-injection-with-guice)
+3. [REST Server](#3-rest-server)
+   1. [REST Server with Play](#1-rest-server-with-play)
+   2. [REST Server with Finatra](#2-rest-server-with-finatra)
+   3. [REST Server with Akka](#3-rest-server-with-akka)
+4. [Connect to Databases](#4-connect-to-databases)
+   1. [Connect to Databases using Slick](#1-connect-to-databases-with-slick)
+   2. [Connect to Databases using ScalikeJDBC](#2-connect-to-databases-with-scalikejdbc)
 
-### 1. Template
+### 0. Clean Architecture
+
+#### 1. Template
 
 Directories and abstraction of `contract.service.Service`.
 
 For more information about this section visit my blog - [Clean Architecture in Scala](https://saeiddadkhah.medium.com/clean-architecture-in-scala-41d1ab05a618).
 
-### 2. Domain
+#### 2. Domain
 
 Design of classes and implementation of simple class-related use cases.
 
 For more information about this section visit my blog -
 [Implementing a Clean Architecture Application in Scala - Part 1](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03).
 
-### 3. Contract
+#### 3. Contract
 
 Signature of services and callbacks.
 
@@ -45,7 +52,7 @@ Signature of services and callbacks.
 For more information about this section visit my blog -
 [Implementing a Clean Architecture Application in Scala - Part 1](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03).
 
-### 4. Application
+#### 4. Application
 
 Implementation of repositories, use cases, and modules.
 
@@ -55,8 +62,8 @@ Implementation of repositories, use cases, and modules.
 * All configurations should be placed in `modules` package.
 * There are three essential modules
     1. Loading the config and validating it happens in `modules.ConfigModule`.
-    1. Callbacks should be bound to repositories in `modules.CallbackModule`.
-    1. Services should be bound to use cases in `modules.ServiceModule`.
+    2. Callbacks should be bound to repositories in `modules.CallbackModule`.
+    3. Services should be bound to use cases in `modules.ServiceModule`.
 * Each type of external data source and entry should have exactly one module.
     * All repositories using database should extend `modules.DatabaseModule`
     * All repositories using REST API and a special HTTP client should extend `modules.RESTModule`
@@ -78,33 +85,41 @@ We are using `config` library of `com.typesafe` to load configs.
     * A more elegant method is to use `-DConfig.file` JVM option and use this function
     `ConfigFactory.load().withFallback(ConfigFactory.defaultApplication()).resolve`.
 
-### 11. Test
+### 1. Test
+
+#### 1. Test with ScalaTest
 
 RESERVED
 
-### 21. Dependency Injection
+### 2. Dependency Injection
+
+#### 1. Dependency Injection with Guice
 
 Initialized.
 
-### 31. Rest Server with Play
+### 3. REST Server
+
+#### 1. REST Server with Play
 
 RESERVED
 
-### 32. Rest Server with Finatra
+#### 2. REST Server with Finatra
 
 Initialized.
 
-### 33. Rest Server with Akka
+#### 3. REST Server with Akka
 
 RESERVED
 
-### 41. Connect to Databases using Slick
+### 4. Connect to Databases
+
+#### 1. Connect to Databases with Slick
 
 RESERVED
 
-### 42. Connect to Databases using ScalikeJDBC
+#### 2. Connect to Databases with ScalikeJDBC
 
 RESERVED
 
-# Read More
+## Read More
 For more information about this repository, visit my [blog](https://saeiddadkhah.medium.com/).
