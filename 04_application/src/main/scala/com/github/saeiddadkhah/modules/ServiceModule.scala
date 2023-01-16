@@ -27,6 +27,7 @@ object ServiceModule {
     val clapService: ClapService = new ClapUseCase(clapCallback, postCallback, userCallback)
     val commentService: CommentService = new CommentUseCase(commentCallback, postCallback, userCallback)
     val publishPostService: PublishPostService = new PublishPostUseCase(postCallback, userCallback)
+    val updatePostService: UpdatePostService = new UpdatePostUseCase(postCallback)
 
   }
 
