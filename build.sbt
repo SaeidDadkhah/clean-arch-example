@@ -30,8 +30,13 @@ lazy val global = project.aggregate(
 
 // // Clean Architecture
 lazy val template = project.settings(name := "01_template") in file("./01_template")
+/** @see [[template]] before reading this project. */
 lazy val domain = project.settings(name := "02_domain") in file("./02_domain")
+/** @see [[domain]] before reading this project. */
 lazy val contract = project.settings(name := "03_contract") in file("./03_contract")
+/**
+ * All following projects use this project, so I strongly recommend you to read this project before any project.
+ * @see [[contract]] before reading this project. */
 lazy val application = project.settings(
   name := "04_application", libraryDependencies ++= applicationDependencies
 ) in file("./04_application")
@@ -46,6 +51,7 @@ lazy val dependencyInjection = project.settings(
 
 // // REST Server
 // Reserved: lazy val restServerPlay = project.settings(name := "21_play") in file("./21_play")
+/** @see [[dependencyInjection]] before reading this project. */
 lazy val restServerFinatra = project.settings(
   name := "32_finatra", libraryDependencies ++= restServerFinatraDependencies
 ) in file("./32_finatra")
