@@ -9,12 +9,12 @@ The bellow image is a schematic of our clean architecture style.
 
 I will walk through the following projects to show the process of creating a Scala Application using Clean Architecture:
 
-1. Template
+1. [Template](#template)
 2. Domain
 3. Contract
 4. Application
 
-### 1. Template
+### <a name="template"></a>1. Template
 
 Directories and abstraction of `contract.service.Service`.
 
