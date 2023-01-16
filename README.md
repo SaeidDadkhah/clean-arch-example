@@ -9,12 +9,19 @@ The bellow image is a schematic of our clean architecture style.
 
 I will walk through the following projects to show the process of creating a Scala Application using Clean Architecture:
 
-1. [Template](#template)
+1. [Template](#1-template)
 2. [Domain](#2-domain)
-3. Contract
-4. Application
+3. [Contract](#3-contract)
+4. [Application](#4-application)
+11. [Test](11-test)
+21. [Dependency Injection](21-dependency-injection)
+31. [Rest Server with Play](31-rest-server-with-play)
+32. [Rest Server with Finatra](32-rest-server-with-finatra)
+33. [Rest Server with Akka](33-rest-server-with-akka)
+41. [Connect to Databases using Slick](41-connect-to-databases-using-slick)
+42. [Connect to Databases using ScalikeJDBC](42-connect-to-databases-using-scalikejdbc)
 
-### <a name="template"></a>1. Template
+### 1. Template
 
 Directories and abstraction of `contract.service.Service`.
 
