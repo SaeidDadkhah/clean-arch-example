@@ -10,7 +10,7 @@ The bellow image is a schematic of our clean architecture style.
 I will walk through the following projects to show the process of creating a Scala Application using Clean Architecture:
 
 1. [Template](#template)
-2. Domain
+2. [Domain](2-domain)
 3. Contract
 4. Application
 
