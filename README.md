@@ -85,6 +85,10 @@ We are using `config` library of `com.typesafe` to load configs.
     * A more elegant method is to use `-DConfig.file` JVM option and use this function
     `ConfigFactory.load().withFallback(ConfigFactory.defaultApplication()).resolve`.
 
+#### 5. Handling Exceptions
+
+Reserved
+
 ### 1. Test
 
 #### 1. Test with ScalaTest
@@ -129,7 +133,8 @@ RESERVED
 
 For more information about this repository, visit my [blog](https://saeiddadkhah.medium.com/).
 
-## Contribution
+## Contributing
 
 Please create an issue to suggest a new concept, framework, or library.
+
 Implement current concepts using mentioned frameworks or libraries, and send a PR. PRs are always welcome.
