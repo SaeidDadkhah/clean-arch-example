@@ -91,6 +91,10 @@ We are using `config` library of `com.typesafe` to load configs.
 
 RESERVED
 
+#### 2. Test with ScalaTest and Mockito
+
+RESERVED
+
 ### 2. Dependency Injection
 
 #### 1. Dependency Injection with Guice
@@ -122,4 +126,10 @@ RESERVED
 RESERVED
 
 ## Read More
+
 For more information about this repository, visit my [blog](https://saeiddadkhah.medium.com/).
+
+## Contribution
+
+Please create an issue to suggest a new concept, framework, or library.
+Implement current concepts using mentioned frameworks or libraries, and send a PR. PRs are always welcome.
