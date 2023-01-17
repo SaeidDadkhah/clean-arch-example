@@ -14,6 +14,7 @@ I will walk through the following projects to show the process of creating a Sca
    2. [Domain](#2-domain)
    3. [Contract](#3-contract)
    4. [Application](#4-application)
+   5. [Handling Exceptions](#5-handling-exceptions)
 1. [Test](#1-test)
    1. [Test](#1-test-with-scalatest)
 2. [Dependency Injection](#2-dependency-injection)
