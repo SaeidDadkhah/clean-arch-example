@@ -11,6 +11,7 @@ lazy val applicationDependencies = Seq(
   // Config
   "com.typesafe" % "config" % "1.4.2",
 )
+lazy val exceptionsDependencies = applicationDependencies
 lazy val dependencyInjectionDependencies = applicationDependencies ++ Seq(
   // Dependency Injection
   "com.google.inject" % "guice" % "5.1.0",
@@ -45,11 +46,12 @@ lazy val contract = project.settings(name := "13_contract") in file("./13_contra
 lazy val application = project.settings(name := "14_application", libraryDependencies ++= applicationDependencies) in file("./14_application")
 
 // // Improvements
-// Reserved: lazy val exceptions = project.settings(name := "11_exceptions") in file("./11_exceptions")
-// Reserved: lazy val futureUtils = project.settings(name := "11_future_utils") in file("./11_future_utils")
+/** Read [[application]] before reading this project. */
+lazy val exceptions = project.settings(name := "21_exceptions", libraryDependencies ++= exceptionsDependencies) in file("./21_exceptions")
+// Reserved: lazy val futureUtils = project.settings(name := "21_future_utils") in file("./21_future_utils")
 
 // // Test
-// Reserved: lazy val testScalatest = project.settings(name := "21_test_scalatest") in file("./11_test_scalatest")
+// Reserved: lazy val testScalatest = project.settings(name := "31_test_scalatest") in file("./31_test_scalatest")
 
 // // Dependency Injection
 /** Read [[application]] before reading this project. */
