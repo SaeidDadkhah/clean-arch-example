@@ -12,6 +12,7 @@ lazy val applicationDependencies = Seq(
   "com.typesafe" % "config" % "1.4.2",
 )
 lazy val exceptionsDependencies = applicationDependencies
+lazy val futureUtilsDependencies = exceptionsDependencies
 lazy val dependencyInjectionDependencies = applicationDependencies ++ Seq(
   // Dependency Injection
   "com.google.inject" % "guice" % "5.1.0",
@@ -24,7 +25,7 @@ lazy val restServerFinatraDependencies = applicationDependencies ++ Seq(
 // Projects
 lazy val global = project.aggregate(
   /* Clean Architecture */ template, domain, contract, application,
-  /* Improvements */
+  /* Improvements */ exceptions, futureUtils,
   /* Test */
   /* REST Server */ restServerFinatra,
   /* Database */
@@ -48,7 +49,8 @@ lazy val application = project.settings(name := "14_application", libraryDepende
 // // Improvements
 /** Read [[application]] before reading this project. */
 lazy val exceptions = project.settings(name := "21_exceptions", libraryDependencies ++= exceptionsDependencies) in file("./21_exceptions")
-// Reserved: lazy val futureUtils = project.settings(name := "21_future_utils") in file("./21_future_utils")
+/** Read [[exceptions]] before reading this project. */
+lazy val futureUtils = project.settings(name := "22_future_utils", libraryDependencies ++= futureUtilsDependencies) in file("./22_future_utils")
 
 // // Test
 // Reserved: lazy val testScalatest = project.settings(name := "31_test_scalatest") in file("./31_test_scalatest")
