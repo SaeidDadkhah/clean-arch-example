@@ -23,6 +23,7 @@ lazy val restServerFinatraDependencies = applicationDependencies ++ Seq(
 // Projects
 lazy val global = project.aggregate(
   /* Clean Architecture */ template, domain, contract, application,
+  /* Improvements */
   /* Test */
   /* REST Server */ restServerFinatra,
   /* Database */
@@ -43,20 +44,24 @@ lazy val contract = project.settings(name := "13_contract") in file("./13_contra
  * Read [[contract]] before reading this project. */
 lazy val application = project.settings(name := "14_application", libraryDependencies ++= applicationDependencies) in file("./14_application")
 
+// // Improvements
+// Reserved: lazy val exceptions = project.settings(name := "11_exceptions") in file("./11_exceptions")
+// Reserved: lazy val futureUtils = project.settings(name := "11_future_utils") in file("./11_future_utils")
+
 // // Test
-// Reserved: lazy val testScalatest = project.settings(name := "11_test_scalatest") in file("./11_test_scalatest")
+// Reserved: lazy val testScalatest = project.settings(name := "21_test_scalatest") in file("./11_test_scalatest")
 
 // // Dependency Injection
 /** Read [[application]] before reading this project. */
-lazy val dependencyInjection =
+lazy val dependencyInjectionGuice =
   project.settings(name := "41_dependency_injection_guice", libraryDependencies ++= dependencyInjectionDependencies) in file("./41_dependency_injection_guice")
 
 // // REST Server
-// Reserved: lazy val restServerPlay = project.settings(name := "31_play") in file("./31_play")
-/** Read [[dependencyInjection]] before reading this project. */
+// Reserved: lazy val restServerPlay = project.settings(name := "51_play") in file("./51_play")
+/** Read [[dependencyInjectionGuice]] before reading this project. */
 lazy val restServerFinatra = project.settings(name := "52_finatra", libraryDependencies ++= restServerFinatraDependencies) in file("./52_finatra")
-// Reserved: lazy val restServerAkka = project.settings(name := "33_akka") in file("./33_akka")
+// Reserved: lazy val restServerAkka = project.settings(name := "53_akka") in file("./53_akka")
 
 // // Database
-// Reserved: lazy val databaseSlick = project.settings(name := "41_slick") in file("./41_slick")
-// Reserved: lazy val databaseScalikeJDBC = project.settings(name := "42_scalikejdbc") in file("./42_scalikejdbc")
+// Reserved: lazy val databaseSlick = project.settings(name := "61_slick") in file("./61_slick")
+// Reserved: lazy val databaseScalikeJDBC = project.settings(name := "62_scalikejdbc") in file("./62_scalikejdbc")
