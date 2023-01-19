@@ -9,25 +9,27 @@ The bellow image is a schematic of our clean architecture style.
 
 I will walk through the following projects to show the process of creating a Scala Application using Clean Architecture and some frameworks:
 
-0. [Clean Architecture](#0-clean-architecture)
-   1. [Template](#1-template)
-   2. [Domain](#2-domain)
-   3. [Contract](#3-contract)
-   4. [Application](#4-application)
-   5. [Handling Exceptions](#5-handling-exceptions)
-1. [Test](#1-test)
-   1. [Test](#1-test-with-scalatest)
-2. [Dependency Injection](#2-dependency-injection)
-   1. [Dependency Injection](#1-dependency-injection-with-guice)
-3. [REST Server](#3-rest-server)
-   1. [REST Server with Play](#1-rest-server-with-play)
-   2. [REST Server with Finatra](#2-rest-server-with-finatra)
-   3. [REST Server with Akka](#3-rest-server-with-akka)
-4. [Connect to Databases](#4-connect-to-databases)
-   1. [Connect to Databases using Slick](#1-connect-to-databases-with-slick)
-   2. [Connect to Databases using ScalikeJDBC](#2-connect-to-databases-with-scalikejdbc)
+1. [Clean Architecture](#1-clean-architecture)
+    1. [Template](#1-template)
+    2. [Domain](#2-domain)
+    3. [Contract](#3-contract)
+    4. [Application](#4-application)
+2. [Improvements](#1-improvements)
+    1. [Handling Exceptions](#1-handling-exceptions)
+    2. [Future Utils](#2-future-utils)
+3. [Test](#2-test)
+    1. [Test](#1-test-with-scalatest)
+4. [Dependency Injection](#3-dependency-injection)
+    1. [Dependency Injection with Guice](#1-dependency-injection-with-guice)
+5. [REST Server](#4-rest-server)
+    1. [REST Server with Play](#1-rest-server-with-play)
+    2. [REST Server with Finatra](#2-rest-server-with-finatra)
+    3. [REST Server with Akka](#3-rest-server-with-akka)
+6. [Connect to Databases](#5-connect-to-databases)
+    1. [Connect to Databases using Slick](#1-connect-to-databases-with-slick)
+    2. [Connect to Databases using ScalikeJDBC](#2-connect-to-databases-with-scalikejdbc)
 
-### 0. Clean Architecture
+### 1. Clean Architecture
 
 #### 1. Template
 
@@ -40,7 +42,8 @@ For more information about this section visit my blog - [Clean Architecture in S
 Design of classes and implementation of simple class-related use cases.
 
 For more information about this section visit my blog -
-[Implementing a Clean Architecture Application in Scala - Part 1](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03).
+[Implementing a Clean Architecture Application in Scala - Part 1](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03)
+.
 
 #### 3. Contract
 
@@ -51,7 +54,8 @@ Signature of services and callbacks.
 * Callbacks do not take execution context as a parameter and should take one from their parent module _(R.T. #4 Application)_.
 
 For more information about this section visit my blog -
-[Implementing a Clean Architecture Application in Scala - Part 1](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03).
+[Implementing a Clean Architecture Application in Scala - Part 1](https://saeiddadkhah.medium.com/implementing-a-clean-architecture-application-in-scala-part-1-1442f0438b03)
+.
 
 #### 4. Application
 
@@ -70,27 +74,34 @@ Implementation of repositories, use cases, and modules.
     * All repositories using REST API and a special HTTP client should extend `modules.RESTModule`
 
 Here are some tips about config files.
+
 * An important **security** point is **_NOT_** to commit config files.
-Put some entries to ignore config files in `.gitignore` file.
+  Put some entries to ignore config files in `.gitignore` file.
     * `application.conf`
     * `application.staging*.conf`
     * `application.prodcution*.conf`
 * Store all config files in one directory i.e. the project root, `resources`.
-I recommend using `resources` directory.
+  I recommend using `resources` directory.
 * It is essential to specify the template of config file, and I recommend committing `application.template.conf` with dummy values.
 * There are multiple ways to specify the config file which we want to run the application with.
-We are using `config` library of `com.typesafe` to load configs.
+  We are using `config` library of `com.typesafe` to load configs.
     * It utilises [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) files to load configs.
     * Expectedly, this library offers `c.t.c.ConfigFactory.parseFile` function to parse config file.
-    You may set an environment variable to specify the config file and load it using this function.
+      You may set an environment variable to specify the config file and load it using this function.
     * A more elegant method is to use `-DConfig.file` JVM option and use this function
-    `ConfigFactory.load().withFallback(ConfigFactory.defaultApplication()).resolve`.
+      `ConfigFactory.load().withFallback(ConfigFactory.defaultApplication()).resolve`.
 
-#### 5. Handling Exceptions
+### 1. Improvements
+
+#### 1. Handling Exceptions
 
 Reserved
 
-### 1. Test
+#### 2. Future Utils
+
+Reserved
+
+### 2. Test
 
 #### 1. Test with ScalaTest
 
@@ -100,13 +111,13 @@ RESERVED
 
 RESERVED
 
-### 2. Dependency Injection
+### 3. Dependency Injection
 
 #### 1. Dependency Injection with Guice
 
 Initialized.
 
-### 3. REST Server
+### 4. REST Server
 
 #### 1. REST Server with Play
 
@@ -120,7 +131,7 @@ Initialized.
 
 RESERVED
 
-### 4. Connect to Databases
+### 5. Connect to Databases
 
 #### 1. Connect to Databases with Slick
 

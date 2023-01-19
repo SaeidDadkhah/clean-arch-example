@@ -29,19 +29,19 @@ lazy val global = project.aggregate(
 ) in file(".")
 
 // // Clean Architecture
-lazy val template = project.settings(name := "01_template") in file("./01_template")
+lazy val template = project.settings(name := "11_template") in file("./11_template")
 
 /** Read [[template]] before reading this project. */
-lazy val domain = project.settings(name := "02_domain") in file("./02_domain")
+lazy val domain = project.settings(name := "12_domain") in file("./12_domain")
 
 /** Read [[domain]] before reading this project. */
-lazy val contract = project.settings(name := "03_contract") in file("./03_contract")
+lazy val contract = project.settings(name := "13_contract") in file("./13_contract")
 
 /**
  * All following projects use this project, so I strongly recommend you to read this project before any other project.
  *
  * Read [[contract]] before reading this project. */
-lazy val application = project.settings(name := "04_application", libraryDependencies ++= applicationDependencies) in file("./04_application")
+lazy val application = project.settings(name := "14_application", libraryDependencies ++= applicationDependencies) in file("./14_application")
 
 // // Test
 // Reserved: lazy val testScalatest = project.settings(name := "11_test_scalatest") in file("./11_test_scalatest")
@@ -49,12 +49,12 @@ lazy val application = project.settings(name := "04_application", libraryDepende
 // // Dependency Injection
 /** Read [[application]] before reading this project. */
 lazy val dependencyInjection =
-  project.settings(name := "21_dependency_injection_guice", libraryDependencies ++= dependencyInjectionDependencies) in file("./21_dependency_injection_guice")
+  project.settings(name := "41_dependency_injection_guice", libraryDependencies ++= dependencyInjectionDependencies) in file("./41_dependency_injection_guice")
 
 // // REST Server
 // Reserved: lazy val restServerPlay = project.settings(name := "31_play") in file("./31_play")
 /** Read [[dependencyInjection]] before reading this project. */
-lazy val restServerFinatra = project.settings(name := "32_finatra", libraryDependencies ++= restServerFinatraDependencies) in file("./32_finatra")
+lazy val restServerFinatra = project.settings(name := "52_finatra", libraryDependencies ++= restServerFinatraDependencies) in file("./52_finatra")
 // Reserved: lazy val restServerAkka = project.settings(name := "33_akka") in file("./33_akka")
 
 // // Database
