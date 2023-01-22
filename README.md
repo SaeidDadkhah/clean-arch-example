@@ -17,6 +17,7 @@ I will walk through the following projects to show the process of creating a Sca
 2. [Improvements](#1-improvements)
     1. [Handling Exceptions](#1-handling-exceptions)
     2. [Future Utils](#2-future-utils)
+    3. [Update with Action](#3-update-with-action)
 3. [Test](#2-test)
     1. [Test](#1-test-with-scalatest)
 4. [Dependency Injection](#3-dependency-injection)
@@ -98,6 +99,10 @@ Here are some tips about config files.
 Reserved
 
 #### 2. Future Utils
+
+Reserved
+
+#### 3. Update with Action
 
 Reserved
 

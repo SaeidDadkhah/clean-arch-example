@@ -51,6 +51,8 @@ lazy val application = project.settings(name := "14_application", libraryDepende
 lazy val exceptions = project.settings(name := "21_exceptions", libraryDependencies ++= exceptionsDependencies) in file("./21_exceptions")
 /** Read [[exceptions]] before reading this project. */
 lazy val futureUtils = project.settings(name := "22_future_utils", libraryDependencies ++= futureUtilsDependencies) in file("./22_future_utils")
+/** Read [[application]] before reading this project. */
+lazy val updateWithActions = project.settings(name := "23_update", libraryDependencies ++= exceptionsDependencies) in file("./23_update")
 
 // // Test
 // Reserved: lazy val testScalatest = project.settings(name := "31_test_scalatest") in file("./31_test_scalatest")
