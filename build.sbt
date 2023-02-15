@@ -18,8 +18,10 @@ lazy val dependencyInjectionDependencies = applicationDependencies ++ Seq(
   "com.google.inject" % "guice" % "5.1.0",
 )
 lazy val restServerFinatraDependencies = applicationDependencies ++ Seq(
+  // Log
+  "ch.qos.logback" % "logback-classic" % "1.4.5",
   // REST Server
-  "com.jakehschwartz" %% "finatra-swagger" % "20.4.1",
+  "com.jakehschwartz" %% "finatra-swagger" % "22.7.0",
 )
 
 // Projects

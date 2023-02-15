@@ -18,7 +18,7 @@ class SignUpUseCase(userCallback: UserCallback) extends SignUpService {
 
     for {
       // Check username availability
-      previousUserOption <- userCallback getBy request.name
+      previousUserOption <- userCallback getBy request.username
       _ <- previousUserOption match {
         case None => Future.unit
         case Some(previousUser) => Future failed Exists("Username", previousUser.username)

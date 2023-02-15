@@ -19,7 +19,7 @@ class SignUpUseCase(userCallback: UserCallback) extends SignUpService {
 
     for {
       // Check username availability
-      _ <- userCallback getBy request.name throwIfExists Exists("Username", request.username)
+      _ <- userCallback getBy request.username throwIfExists Exists("Username", request.username)
 
       // Create user
       user <- userCallback.add(request.username, hashedPassword, request.name, request.eMail, None, None, 0, 0, ZonedDateTime.now())

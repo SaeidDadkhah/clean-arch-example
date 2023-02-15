@@ -1,12 +1,11 @@
 package com.github.saeiddadkhah.application.auth
 
-import java.time.ZonedDateTime
-
 import com.github.saeiddadkhah.contract.callback.auth.UserCallback
 import com.github.saeiddadkhah.contract.service.auth.SignUpService
 import com.github.saeiddadkhah.domain.auth.User
 import com.github.saeiddadkhah.util.AuthUtils
 
+import java.time.ZonedDateTime
 import scala.concurrent.ExecutionContext
 import scala.concurrent.Future
 
@@ -18,7 +17,7 @@ class SignUpUseCase(userCallback: UserCallback) extends SignUpService {
 
     for {
       // Check username availability
-      previousUserOption <- userCallback getBy request.name
+      previousUserOption <- userCallback getBy request.username
       _ <- previousUserOption match {
         case None => Future.unit
         case Some(previousUser) => Future failed new Exception(s"This username is taken: ${previousUser.username}")
