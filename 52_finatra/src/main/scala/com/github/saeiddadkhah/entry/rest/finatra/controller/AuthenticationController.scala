@@ -15,7 +15,7 @@ class AuthenticationController @Inject()(signOutService: SignOutService) extends
 
   prefix("/api/v1") {
 
-    delete("/users/:user_id/sessions/current", "Sign Out") { requestWrapper: RequestWrapper =>
+    delete("/sessions/current", "Sign Out") { requestWrapper: RequestWrapper =>
       val requestDTO = requestWrapper.getRequestDTO[SignOutRequestDTO]
       signOutService call AuthFactory.signOuRequest(requestWrapper, requestDTO) map { _ =>
         response.noContent

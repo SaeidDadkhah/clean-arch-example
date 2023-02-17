@@ -24,10 +24,11 @@ object ServiceModule {
     import application.blog._
     import service.blog._
 
-    val clapService: ClapService = new ClapUseCase(clapCallback, postCallback, userCallback)
-    val commentService: CommentService = new CommentUseCase(commentCallback, postCallback, userCallback)
+    val getPostService: GetPostService = new GetPostUseCase(postCallback)
+    val clapService: ClapService = new ClapUseCase(clapCallback, getPostService, postCallback, userCallback)
+    val commentService: CommentService = new CommentUseCase(commentCallback, getPostService, userCallback)
     val publishPostService: PublishPostService = new PublishPostUseCase(postCallback, userCallback)
-    val updatePostService: UpdatePostService = new UpdatePostUseCase(postCallback)
+    val updatePostService: UpdatePostService = new UpdatePostUseCase(getPostService, postCallback)
 
   }
 

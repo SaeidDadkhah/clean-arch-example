@@ -2,6 +2,7 @@ package com.github.saeiddadkhah
 
 import com.github.saeiddadkhah.entry.rest.finatra._
 import com.github.saeiddadkhah.entry.rest.finatra.controller._
+import com.github.saeiddadkhah.entry.rest.finatra.filters.AuthorizationFilter
 import com.github.saeiddadkhah.modules._
 import com.google.inject.Module
 import com.twitter.finagle.http.Request
@@ -28,8 +29,8 @@ object Application extends HttpServer with ConfigModule {
     // // Unauthorized Access
     router.add[unsafe.AuthenticationController]
     // // Authorized Access
-    router.add[AuthenticationController]
-    router.add[BlogController]
+    router.add[AuthorizationFilter, AuthenticationController]
+    router.add[AuthorizationFilter, BlogController]
   }
 
 }

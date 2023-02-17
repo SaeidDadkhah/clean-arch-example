@@ -1,3 +1,5 @@
 package com.github.saeiddadkhah.entry.rest.finatra.adapter.auth.api
 
-case class SignInRequestDTO(username: String, password: String)
+import com.twitter.finatra.http.annotations.RouteParam
+
+case class SignInRequestDTO(@RouteParam("username") username: String, password: String)

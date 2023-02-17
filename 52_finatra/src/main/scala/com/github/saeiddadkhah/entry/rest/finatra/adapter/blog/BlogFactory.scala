@@ -7,6 +7,10 @@ import com.github.saeiddadkhah.entry.rest.finatra.adapter.blog.api._
 
 object BlogFactory {
 
+  def getPostRequest: (RequestWrapper, GetPostRequestDTO) => GetPostService.Request = { (_, dto) =>
+    GetPostService.Request(dto.postID)
+  }
+
   def paragraph: ParagraphDTO => Paragraph = { dto =>
     dto.`type` match {
       case ParagraphDTO.Type.Header =>

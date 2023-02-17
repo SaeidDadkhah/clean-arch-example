@@ -16,7 +16,9 @@ object ServiceModule extends TwitterModule {
     // Blog
     bind(classOf[service.blog.ClapService]) to classOf[application.blog.ClapUseCase]
     bind(classOf[service.blog.CommentService]) to classOf[application.blog.CommentUseCase]
+    bind(classOf[service.blog.GetPostService]) to classOf[application.blog.GetPostUseCase]
     bind(classOf[service.blog.PublishPostService]) to classOf[application.blog.PublishPostUseCase]
+    bind(classOf[service.blog.UpdatePostService]) to classOf[application.blog.UpdatePostUseCase]
 
   }
 
